@@ -11,6 +11,7 @@ import { ListTodoComponent } from './list-todo/list-todo.component';
 import { ErrorpageComponent } from './errorpage/errorpage.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FooterComponent } from './footer/footer.component';
     ListTodoComponent,
     ErrorpageComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
