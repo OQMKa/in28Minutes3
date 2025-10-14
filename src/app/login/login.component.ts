@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { HardcodedAuthenticationService } from '../service/hardcoded-authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +9,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  constructor(private router:Router){}
+  constructor(private router:Router,
+    private hardcoded:HardcodedAuthenticationService
+  ){}
   username = "om";
   password = "dummy";
   invalidLogin = false;
@@ -16,7 +19,7 @@ export class LoginComponent {
 
   handleLogin() {
     // throw new Error('Method not implemented.');
-    if (this.username == "om" && this.password == "dummy") {
+    if (this.hardcoded.authenticate(this.username,this.password)) {
       this.invalidLogin = false;
       console.log("login Success!...");
       this.router.navigate(['welcome']);
@@ -24,7 +27,7 @@ export class LoginComponent {
     } else {
       this.invalidLogin = true;
       console.log("login Failed!...")
-      this.router.navigate(['welcome']);
+      this.router.navigate(['error']);
     }
 
   }

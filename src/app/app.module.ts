@@ -9,6 +9,8 @@ import { ErrorComponent } from './error/error.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ListTodoComponent } from './list-todo/list-todo.component';
 import { ErrorpageComponent } from './errorpage/errorpage.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { ErrorpageComponent } from './errorpage/errorpage.component';
     ErrorComponent,
     WelcomeComponent,
     ListTodoComponent,
-    ErrorpageComponent
+    ErrorpageComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
